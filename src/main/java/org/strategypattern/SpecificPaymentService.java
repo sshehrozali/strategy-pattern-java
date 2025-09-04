@@ -1,16 +1,13 @@
 package org.strategypattern;
 
 public class SpecificPaymentService {
-    private final Integer total;
-    private final PaymentProcessor paymentProcessor;
 
-    public SpecificPaymentService(Integer total, PaymentProcessor paymentProcessor) {
-        this.total = total;
-        this.paymentProcessor = paymentProcessor;
+    public SpecificPaymentService() {
     }
 
-    public void process() {
-        // call provider
-        paymentProcessor.pay(total);
+    public void process(PaymentRequest request) {
+        // get from factory, call payment provider
+        PaymentProcessor paymentProcessor = PaymentsFactory.create(request.paymentType());
+        paymentProcessor.pay(request.total());
     }
 }
