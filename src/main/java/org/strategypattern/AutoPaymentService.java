@@ -2,12 +2,12 @@ package org.strategypattern;
 
 import java.util.Map;
 
-public class PaymentService {
+public class AutoPaymentService {
 
     private final Integer total;
     private final Map<String, PaymentProcessor> methods;
 
-    public PaymentService(Integer total, Map<String, PaymentProcessor> methods) {
+    public AutoPaymentService(Integer total, Map<String, PaymentProcessor> methods) {
         this.total = total;
         this.methods = methods;
     }
